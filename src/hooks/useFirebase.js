@@ -1,4 +1,12 @@
-import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut } from "firebase/auth";
+import {
+    getAuth,
+    signInWithPopup,
+    GoogleAuthProvider,
+    onAuthStateChanged,
+    signOut,
+    createUserWithEmailAndPassword,
+    signInWithEmailAndPassword,
+    sendPasswordResetEmail } from "firebase/auth";
 import React, { useEffect, useState } from 'react';
 import initialAuthentication from '../Firebase/firebase.init';
 
@@ -31,6 +39,30 @@ const useFirebase = () => {
             })
 
     }
+    //sign in with email and password
+    const handleUserRegister = (email, password) => {
+        createUserWithEmailAndPassword(auth, email, password)
+            .then((result) => {
+                console.log(result.user);
+                setError ('');
+                
+            })
+            .catch((error) => {
+                const errorMessage = error.message;
+            });
+    };
+    //reset password in with existing user
+    const handleResetPassword =(email)=>{
+        sendPasswordResetEmail (auth, email)
+            .then(() => {
+                // Password reset email sent!
+                // ..
+            })
+
+
+    }
+    
+
     useEffect(() => {
         onAuthStateChanged(auth, user => {
             if (user) {
@@ -45,7 +77,9 @@ const useFirebase = () => {
         signInWithGoogle,
         user,
         error,
-        logOut
+        logOut,
+        handleUserRegister,
+        handleResetPassword
     }
 };
 

@@ -12,6 +12,7 @@ import NotFound from './components/NotFound/NotFound';
 import Card from './components/Card/Card';
 import AuthProvider from './context/AuthProvider';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
@@ -36,9 +37,9 @@ function App() {
           <DoctorPortal></DoctorPortal>
 
         </PrivateRoute>
-        <Route path ="/admit">
+        <PrivateRoute path ="/admit">
           <Admit></Admit>
-        </Route>
+        </PrivateRoute>
         <Route path="/login">
           <Login></Login>
         </Route>
@@ -52,6 +53,7 @@ function App() {
       
       </BrowserRouter>
       </AuthProvider>
+      <Footer></Footer>
       
     </div>
   );

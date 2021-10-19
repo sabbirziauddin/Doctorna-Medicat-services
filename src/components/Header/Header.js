@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Service from '../Service/Service';
 import banner from '../../images/banner.jpeg'
 import DoctorPortal from '../DoctorPortal/DoctorPortal';
+import Footer from '../Footer/Footer';
 
 
 const Header = () => {
@@ -49,6 +50,8 @@ const Header = () => {
 
 
             </section>
+            
+            
 
 
 
