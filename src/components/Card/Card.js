@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
+import { Link } from 'react-router-dom';
 
 const Card = () => {
     const {id} = useParams()
@@ -31,6 +32,9 @@ const Card = () => {
                     <div className="card-footer">
                         <div className="d-flex align-items-center justify-content-between ">
                             <h3 className="text-danger fw-bold">${matchedItem[0]?.price} </h3>
+                            <Link to='/home'>
+                                <button className="btn btn-primary">Add service</button>
+                            </Link>
 
 
                         </div>

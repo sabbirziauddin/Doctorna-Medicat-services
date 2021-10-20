@@ -6,7 +6,7 @@ i am using private route for this project.for example user want to take service 
 The another important issue is using dynamic router.
 i am using context api rather props in some place
 
-live link : https://pensive-kirch-e69e95.netlify.app/
+live link : https://admiring-edison-9dc5b0.netlify.app/home
 git link :https://github.com/Programming-Hero-Web-Course3/healthcare-related-website-sabbirziauddin
 git hub link:https://github.com/Programming-Hero-Web-Course3/healthcare-related-website-sabbirziauddin
 

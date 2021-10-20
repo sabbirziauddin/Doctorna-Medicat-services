@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react/cjs/react.development';
+import { useState } from 'react';
 import useAuth from '../../hooks/useAuth';
 import useFirebase from '../../hooks/useFirebase';
 import loginImg from '../../images/login.jpeg'
@@ -49,12 +49,12 @@ const resetPassword =()=>{
                     <div className="form-group">
                         <label htmlFor="" className="text-danger"></label>
                         <div className='d-flex justify-content-between'>
-                            {/* <div className="from-group mt-5">
+                             {/* <div className="from-group mt-5">
                                 <button onClick={registrationWithNewUser} className="btn btn-primary" >Register</button>
                             </div>
                             <div className="from-group mt-5">
                                 <button onClick={resetPassword} className="btn btn-primary" >reset password?</button>
-                            </div> */}
+                            </div>  */}
                         </div>
                     </div>
                     <div className="from-group mt-5">

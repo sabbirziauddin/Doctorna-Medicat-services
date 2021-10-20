@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import useAuth from '../../hooks/useAuth';
 
 const Registration = () => {
-    const { handleUserRegister, registerWithExistingUser} = useAuth();
+    const { handleUserRegister, registerWithExistingUser, logOut, handleResetPassword,user } = useAuth();
     const [email,setEmail] = useState('');
     const [password,setPassword] = useState('');
     const [err,setErr] = useState('');
-    const [isLoggedIn,setIsloggedIn]= useState('false');
+    const [isLoggedIn,setIsloggedIn]= useState(false);
 
     const registrationWithNewUser =(event)=>{
         event.preventDefault();
@@ -23,6 +23,10 @@ const Registration = () => {
         isLoggedIn ? registerWithExistingUser(email, password) : handleUserRegister(email, password)
         
     
+    }
+    //reset password
+    const resetPassword = () => {
+        handleResetPassword(email);
     }
     const hanldeEmail =(e) =>{
         console.log(e.target.value);
@@ -45,6 +49,12 @@ const Registration = () => {
             <div className=" container">
                 <div className="row align-items-center d-flex justify-content-center align-items-center " style={{ height: "100vh" }}>
                     <h3 >please  {isLoggedIn ? 'Log in' : 'Sign up'} here</h3>
+                    {
+                        user.email&&
+                        <h4>logged in as : <span>{user.email}</span></h4>
+
+                    }
+                    
                     
                     <div className="col-md-4 shadow p-5">
                         <div className="form-group">
@@ -66,11 +76,14 @@ const Registration = () => {
                             <label htmlFor="" className="text-danger">Forgot your password?</label>
                             <div className="row mb-3 text-danger" >{err} </div>
                             <div className='d-flex justify-content-between'>
-                                <div className="from-group mt-5">
+                                <div className="from-group mt-3">
                                     <button onClick={registrationWithNewUser} className="btn btn-primary" >{isLoggedIn ? 'Log in' : 'Sign up'}</button>
                                 </div>
-                                <div className="from-group mt-5">
-                                    <button onClick='{resetPassword}' className="btn btn-primary" >reset password?</button>
+                                <div className="from-group mt-3">
+                                    <button onClick={resetPassword} className="btn btn-primary" >reset password?</button>
+                                </div>
+                                <div className="from-group mt-3">
+                                    <button onClick={logOut} className="btn btn-primary" >Log out</button>
                                 </div>
                             </div>
                         </div>
