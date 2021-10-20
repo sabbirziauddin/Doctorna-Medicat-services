@@ -13,6 +13,7 @@ import Card from './components/Card/Card';
 import AuthProvider from './context/AuthProvider';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import Footer from './components/Footer/Footer';
+import Registration from './components/Registration/Registration';
 
 function App() {
   return (
@@ -43,6 +44,9 @@ function App() {
         <Route path="/login">
           <Login></Login>
         </Route>
+            <Route path= '/singup'>
+              <Registration></Registration>
+            </Route>
           <PrivateRoute path="/addService/:id">
             <Card></Card>
           </PrivateRoute>

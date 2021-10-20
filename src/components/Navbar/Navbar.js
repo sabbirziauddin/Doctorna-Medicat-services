@@ -34,7 +34,13 @@ const Navbar = () => {
                                 <Link to="/login">
                                     <button className="btn btn-warning me-2" >Log In</button>
                                 </Link>
+                                
+                                
+                                
                         }
+                        
+                        <Link to="/singup" className='nav-link text-black'>Sign up</Link>
+
                         
                         
 

@@ -43,14 +43,29 @@ const useFirebase = () => {
     const handleUserRegister = (email, password) => {
         createUserWithEmailAndPassword(auth, email, password)
             .then((result) => {
+                
+               setUser(result.user);
                 console.log(result.user);
                 setError ('');
                 
             })
             .catch((error) => {
-                const errorMessage = error.message;
+                setError(error.message);
             });
     };
+//register with  existing user 
+   const  registerWithExistingUser = (email,password)=>{
+    signInWithEmailAndPassword(auth, email, password)
+        .then(userCredential => {
+            const user = userCredential.user;
+            console.log(user);
+            setError('');
+        })
+        .catch(error => {
+            setError(error.message);
+        })
+
+    }
     //reset password in with existing user
     const handleResetPassword =(email)=>{
         sendPasswordResetEmail (auth, email)
@@ -66,7 +81,7 @@ const useFirebase = () => {
     useEffect(() => {
         onAuthStateChanged(auth, user => {
             if (user) {
-                console.log("inside state change ", user);
+                
                 setUser(user);
             }
         })
@@ -79,7 +94,7 @@ const useFirebase = () => {
         error,
         logOut,
         handleUserRegister,
-        handleResetPassword
+        handleResetPassword, registerWithExistingUser
     }
 };
 

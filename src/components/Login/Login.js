@@ -38,23 +38,23 @@ const resetPassword =()=>{
                     <img className="img-fluid" src={loginImg} alt="" />
                 </div>
                 <div className="col-md-4 shadow p-5">
-                    <div className="form-group">
+                    {/* <div className="form-group">
                         <label htmlFor="">Email</label>
                         <input onBlur={hanldeEmail} type="email" className="form-control" id="inputEmail3" required />
                     </div>
                     <div className="form-group">
                         <label htmlFor="">Password</label>
                         <input onBlur={hanldePassword} type="password" className="form-control" id="inputPassword3" required />
-                    </div>
+                    </div> */}
                     <div className="form-group">
-                        <label htmlFor="" className="text-danger">Forgot your password?</label>
+                        <label htmlFor="" className="text-danger"></label>
                         <div className='d-flex justify-content-between'>
-                            <div className="from-group mt-5">
+                            {/* <div className="from-group mt-5">
                                 <button onClick={registrationWithNewUser} className="btn btn-primary" >Register</button>
                             </div>
                             <div className="from-group mt-5">
                                 <button onClick={resetPassword} className="btn btn-primary" >reset password?</button>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                     <div className="from-group mt-5">
